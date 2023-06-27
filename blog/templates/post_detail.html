@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{%block content%}
+<style>
+    h1 {
+      font-family: BankGothic Lt BT, sans-serif;
+      font-size: 27px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+    }
+    p {
+      font-family: Georgia, sans-serif;
+      font-size: 27px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+
+    }
+</style>
+<br>
+
+<h1>Trabajo de repositorio N: {{post.id}} <h1> 
+<br>    
+
+<h1>{{post.titulo}}</h1>
+<br>
+<h4>{{post.date}}</h4>
+<br>
+<br>
+<p>{{post.descripcion}}</p>
+<br>
+<br>
+<center><img src="{{post.imagenes.url}}" alt="{{post.titulo}}" max-width:100%;width:auto;height:auto></center> 
+<br>
+<br>
+{%endblock%}

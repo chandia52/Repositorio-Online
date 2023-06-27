@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{%block content%}
+{%load static%}
+<style>
+    h1 {
+        
+        font-family: Georgia, sans-serif;
+        font-size: 21 px;
+        font-weight: bold;
+        color: #333333;
+        text-align: center;
+        line-height: 2;
+      }
+</style>
+<br>
+<h2>Home<h2>
+    
+    <h1>Es un honor darles la bienvenida al distinguido repositorio de proyectos de Nicolás Chandía. En esta exquisita página web, se presentarán y compartirán todos los proyectos realizados en el pasado, así como aquellos en los que se está trabajando actualmente.
+
+
+        En la sección "<a href="blog">Proyectos</a>", podrán deleitarse con una minuciosa descripción de cada uno de ellos, donde se desvelarán los más ínfimos detalles y se desplegará una visión exhaustiva de su enfoque y logros.
+        
+
+        Además, les invitamos a utilizar el contacto disponible en el pie de página, donde podrán entablar una comunicación directa con Nicolás Chandía, brindando así una oportunidad única para compartir ideas, comentarios o sugerencias en torno a los proyectos o cualquier otra cuestión de interés.
+        
+        Para enriquecer aún más su experiencia, les ofrecemos la posibilidad de <a href="{% static 'portfolio/cv.pdf'%}" target= "_blank">Descargar el currículum vitae</a> de Nicolás Chandía en la sección superior derecha, lo cual les permitirá explorar su destacada trayectoria y habilidades de manera más detallada.
+        
+        Agradecemos sinceramente su visita a este excepcional blog, que constituye una ventana al fascinante mundo de los proyectos de Nicolás Chandía.</h1>
+
+{% for project in projects %}
+    <h2>{{ project.titulo }}</h2>
+    <p>{{ project.descripcion }}</p>
+    <img src='{{project.imagenes.url}}' alt="{{ project.titulo }}"style="width:50%" > 
+    <br>
+    <br>
+    <br>   
+    {%if project.url %}
+        <a href="{{project.url}}">{{project.url}}</a>
+    {% endif %}
+{%endfor%}
+{% endblock %}
+
